@@ -1,16 +1,30 @@
 import React from "react";
+import logo from "../assets/miracle-logo.png"
+import { useNavigate } from "react-router-dom";
 
 function NavBar() {
+    const navigate = useNavigate()
+
   return (
     <div className="flex justify-center py-6">
-      <div className="w-full md:w-[70%] flex justify-between">
+      <div className="w-full md:w-[90%] flex justify-between">
         <div className="flex justify-between">
+        <img alt="Logo" src={logo} className="w-[70px]"/>
           <button className="mx-2 px-2 bg-black text-white text-xl">
             Miracle Design
           </button>
-          <button className="mx-2">Women</button>
-          <button className="mx-2">Men</button>
-          <button className="mx-2">Children</button>
+          <button className="mx-2" onClick={() => {
+            navigate('/shoppingmen')
+          }}>Men</button>
+          <button className="mx-2" onClick={() => {
+            navigate('/shoppingwomen')
+          }}>Women</button>
+          <button className="mx-2" onClick={() => {
+            navigate('/shoppingkids')
+          }}>Kids</button>
+          <button className="mx-2" onClick={() => {
+            navigate('/shoppingmiscellaneous')
+          }}>Miscellaneous</button>
         </div>
 
         <div className="flex justify-between">
