@@ -3,7 +3,7 @@ import p2 from '../assets/images/bottom/menbottom2.png'
 import p3 from '../assets/images/bottom/menbottom3.png'
 import p4 from '../assets/images/bottom/menbottom4.png'
 
-const menTops = [
+const menPants = [
     {
         category: 'bottom and pants',
         description: 'Wonderful Traditonal shoes for Men',
@@ -29,4 +29,4 @@ const menTops = [
     },
 ]
 
-export default menTops
+export default menPants

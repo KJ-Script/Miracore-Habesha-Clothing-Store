@@ -6,6 +6,7 @@ import Kids from "./pages/Kids";
 import Miscellaneous from "./pages/Miscellaneous";
 import Women from "./pages/Women";
 import Shopping from "./pages/Shopping";
+import ShoppingDetails from "./pages/ShoppingDetails";
 
 function App() {
 
@@ -20,6 +21,8 @@ function App() {
           <Route exact path="/shoppingwomen" element={<Women />} />
           <Route exact path="/shoppingkids" element={<Kids />} />
           <Route exact path="/shoppingother" element={<Miscellaneous />} />
+          <Route exact path="/shopping/details" element={<ShoppingDetails />} />
+
         </Routes>
       </Router>
     </div>

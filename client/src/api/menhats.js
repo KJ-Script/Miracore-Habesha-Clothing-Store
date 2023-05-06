@@ -1,8 +1,8 @@
 import h1 from '../assets/images/hats/hats.png'
-import h1 from '../assets/images/hats/hats1.png'
-import h1 from '../assets/images/hats/hats2.png'
+import h2 from '../assets/images/hats/hats1.png'
+import h3 from '../assets/images/hats/hats2.png'
 
-const menTops = [
+const menHats = [
     {
         category: 'Hats',
         description: 'Wonderful Traditonal shoes for Men',
@@ -22,4 +22,4 @@ const menTops = [
     },
 ]
 
-export default menTops
+export default menHats

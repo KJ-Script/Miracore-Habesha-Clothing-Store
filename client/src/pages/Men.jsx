@@ -21,7 +21,7 @@ function Men() {
         )}
 
         {header == "top" ? (
-          <div>
+          <div className="w-full flex justify-center">
             <MenTop />
           </div>
         ) : (
@@ -29,7 +29,7 @@ function Men() {
         )}
 
         {header == "pants" ? (
-          <div>
+          <div className="w-full flex justify-center">
             <MenPants />
           </div>
         ) : (
@@ -37,7 +37,7 @@ function Men() {
         )}
 
         {header == "hats" ? (
-          <div>
+          <div className="w-full flex justify-center">
             <MenHats />
           </div>
         ) : (
@@ -45,7 +45,7 @@ function Men() {
         )}
 
         {header == "additionals" ? (
-          <div>
+          <div className="w-full flex justify-center">
             <MenAdditional />
           </div>
         ) : (
