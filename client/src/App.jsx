@@ -7,6 +7,9 @@ import Miscellaneous from "./pages/Miscellaneous";
 import Women from "./pages/Women";
 import Shopping from "./pages/Shopping";
 import ShoppingDetails from "./pages/ShoppingDetails";
+import AdminSignIn from "./pages/AdminSignIn";
+import AdminDashboard from "./pages/AdminDashboard";
+import AdminProfile from "./pages/AdminProfile";
 
 function App() {
 
@@ -22,7 +25,9 @@ function App() {
           <Route exact path="/shoppingkids" element={<Kids />} />
           <Route exact path="/shoppingother" element={<Miscellaneous />} />
           <Route exact path="/shopping/details" element={<ShoppingDetails />} />
-
+          <Route exact path="/admin/signin" element={<AdminSignIn />} />
+          <Route exact path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route exact path="/admin/profile" element={<AdminProfile />} />
         </Routes>
       </Router>
     </div>
