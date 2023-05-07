@@ -5,7 +5,7 @@ import ShoppingBox from '../utils/ShoppingBox'
 function MenShoes() {
 
   return (
-    <div className="w-[70%] grid grid-cols-3">
+    <div className="w-[70%] md:grid md:grid-cols-3">
       {
         menShoes.map((item, index) => {
           return (

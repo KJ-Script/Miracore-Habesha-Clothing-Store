@@ -8,7 +8,7 @@ function Cart() {
   const [selected, setSelected] = useState("bag");
   return (
     <div>
-      <div className="w-full flex justify-center space-x-20">
+      <div className="w-full md:flex md:justify-center md:space-x-20 text-center">
         <div
           className={selected == "bag" ? `font-bold underline` : ``}
           onClick={() => {
@@ -48,9 +48,9 @@ function Cart() {
 
       {selected == "bag" ? <Bag /> : <></>}
 
-      {selected == "payment" ? <Payment /> : <></>}
+      {selected == "payment" ? <Payment setSelected={setSelected}/> : <></>}
 
-      {selected == "delivery" ? <Delivery /> : <></>}
+      {selected == "delivery" ? <Delivery setSelected={setSelected}/> : <></>}
 
       {selected == "order" ? <OrderComplete /> : <></>}
     </div>

@@ -10,7 +10,7 @@ function ShoppingNavBar({header ,setHeader, firstTitle, secondTitle, thirdTitle,
         <div className="border w-[96%] my-2"></div>
     </div>
     <div className="w-full flex justify-center py-2">
-        <div className="w-[60%] flex justify-between">
+        <div className="w-[60%] md:flex md:justify-between">
             <div className={header == 'top' ? `py-3 px-9 border-[2px] border-black bg-black text-white` :`py-3 px-9 border-[2px] border-black hover:bg-black hover:text-white`} onClick={() => {
                 setHeader('top')
             }}>{firstTitle}</div>

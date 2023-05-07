@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Delivery() {
+function Delivery({setSelected}) {
   return (
     <div className="w-full flex justify-center my-20">
     <div className="text-center w-full">
@@ -21,7 +21,7 @@ function Delivery() {
           <input type="text" placeholder="Delivery Address *" required className="p-3 w-[61%] border border-black"/>
 
           <div className="w-full my-2 flex justify-center space-x-1">
-          <div className="w-[5%] p-3 border border-black text-center flex items-center">+251</div>
+          <div className="w-[5%] p-3 border border-black text-center hidden md:flex items-center">+251</div>
           <input type="number" placeholder="Phone-Number *" required className="p-3 w-[56%] border border-black"/>
           </div>
 
@@ -34,7 +34,9 @@ function Delivery() {
           <option>Standard Delivery</option>
           <option>Collect in Store</option>
       </select>
-    <button className="w-[10%] text-white bg-black h-[50px] mx-3">SUBMIT</button>
+    <button className="w-[10%] text-white bg-black h-[50px] mx-3" onClick={() => {
+      setSelected('payment')
+    }}>SUBMIT</button>
           
       </div>
     </div>

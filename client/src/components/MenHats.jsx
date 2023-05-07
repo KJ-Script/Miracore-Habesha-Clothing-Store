@@ -4,7 +4,7 @@ import menHats from '../api/menhats'
 
 function MenHats() {
   return (
-    <div className="w-[70%] grid grid-cols-3">
+    <div className="w-[70%] md:grid md:grid-cols-3">
     {
       menHats.map((item, index) => {
         return (

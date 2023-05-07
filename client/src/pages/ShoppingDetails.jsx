@@ -10,9 +10,9 @@ function ShoppingDetails() {
   return (
     <div>
       <div className="w-full border"></div>
-      <div className="flex my-12 w-full justify-center">
-        <div className="w-[70%] justify-between">
-          <div className="flex justify-center">
+      <div className="md:flex my-12 w-full justify-center">
+        <div className="w-[70%] mx-12 md:justify-between">
+          <div className="md:flex justify-center">
             <div className="hover:p-12 hover:duration-500 mx-2">
               <img
                 alt={"itempicture2"}
@@ -35,7 +35,7 @@ function ShoppingDetails() {
           </div>
         </div>
 
-        <div>
+        <div className="text-center">
           <div className="text-2xl font-bold">Miracore</div>
           <div className="text-2xl font-light">{item.category}</div>
           <div className="text-lg">{item.description}</div>
@@ -130,7 +130,7 @@ function ShoppingDetails() {
         </div>
       </div>
 
-      <div className="flex justify-between my-3 mx-4 text-center">
+      <div className="md:flex justify-between my-3 mx-4 text-center hidden">
         <div className="w-[300px] h-[100px] border border-black flex items-center">
           <p className="w-full text-center">Review text goes here</p>
         </div>

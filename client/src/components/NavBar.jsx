@@ -10,7 +10,7 @@ function NavBar() {
       <div className="w-full md:w-[90%] flex justify-between">
         <div className="flex justify-between">
         <img alt="Logo" src={logo} className="w-[70px]"/>
-          <button className="mx-2 px-2 bg-black text-white text-xl">
+          <button className="hidden md:mx-2 px-2 bg-black text-white text-xl">
             Miracle Design
           </button>
           <button className="mx-2" onClick={() => {
@@ -27,7 +27,7 @@ function NavBar() {
           }}>Miscellaneous</button>
         </div>
 
-        <div className="flex justify-between">
+        <div className="hidden md:flex md:justify-between">
           <button className="mx-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
