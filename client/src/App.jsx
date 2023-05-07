@@ -20,7 +20,7 @@ function App() {
           <Route exact path="/shoppingmen" element={<Men />} />
           <Route exact path="/shoppingwomen" element={<Women />} />
           <Route exact path="/shoppingkids" element={<Kids />} />
-          <Route exact path="/shoppingother" element={<Miscellaneous />} />
+          <Route exact path="/shoppingmiscellaneous" element={<Miscellaneous />} />
           <Route exact path="/shopping/details" element={<ShoppingDetails />} />
 
         </Routes>

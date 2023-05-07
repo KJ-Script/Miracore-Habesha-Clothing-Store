@@ -8,9 +8,13 @@ import MenAdditional from "../components/MenAdditional";
 
 function Men() {
   const [header, setHeader] = useState("top");
+  const firstTitle = 'TOPS & COATS'
+  const secondTitle = 'PANTS & BOTTOMS'
+  const thirdTitle = 'FOOTWEAR'
+  const fourthTitle = 'HATS'
   return (
     <div className="w-full">
-      <ShoppingNavBar header={header} setHeader={setHeader} />
+      <ShoppingNavBar header={header} setHeader={setHeader} firstTitle={firstTitle} secondTitle={secondTitle} thirdTitle={thirdTitle} fourthTitle={fourthTitle}/>
       <div className="">
         {header == "shoes" ? (
           <div className="w-full flex justify-center">
