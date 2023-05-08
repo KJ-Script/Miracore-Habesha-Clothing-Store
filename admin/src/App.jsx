@@ -6,11 +6,13 @@ import Dashboard from "./Pages/Dashboard";
 import Inventory from "./Pages/Inventory";
 import Orders from "./Pages/Orders";
 import ProfilePage from "./Pages/ProfilePage";
+import CreateAccount from "./Pages/CreateAccount";
 
 export const LoginContext = createContext()
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(true);
+
   return (
     <LoginContext.Provider value={[loggedIn, setLoggedIn]}>
     <div className="font-outfit">
@@ -22,7 +24,7 @@ function App() {
           <Route exact path="/inventory" element={<Inventory />} />
           <Route exact path="/orders" element={<Orders />} />
           <Route exact path="/profile" element={<ProfilePage />} />
-          <Route exact path="/create" element={<Create />} />
+          <Route exact path="/create" element={<CreateAccount />} />
         </Routes>
       </Router>
     </div>
