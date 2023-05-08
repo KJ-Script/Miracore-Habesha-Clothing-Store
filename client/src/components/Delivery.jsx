@@ -26,7 +26,7 @@ function Delivery({setSelected}) {
           </div>
 
       </div>
-
+    
       <p className="text-2xl p-2 bg-black text-white mx-[20%]">DELIVERY OPTIONS?</p>
       <p>how would you like to recieve your packages</p>
 
