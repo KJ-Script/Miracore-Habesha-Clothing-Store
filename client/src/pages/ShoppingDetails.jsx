@@ -6,6 +6,9 @@ function ShoppingDetails() {
   const navigate = useNavigate();
   const [selected, setSelected] = useState("md");
   const item = location.state?.item;
+  const img = location.state?.img;
+  const img1 = location.state?.img1;
+  const img2 = location.state?.img2;
 
   return (
     <div>
@@ -16,19 +19,19 @@ function ShoppingDetails() {
             <div className="hover:p-12 hover:duration-500 mx-2">
               <img
                 alt={"itempicture2"}
-                src={item.img}
+                src={img}
                 className="w-[600px] h-[500px] border border-black p-6"
               />
             </div>
             <div className="">
               <img
                 alt={"itempicture2"}
-                src={item.img1}
+                src={img1}
                 className="w-[300px] h-[250px] border border-black p-6 my-2 hover:p-2 hover:duration-500"
               />
               <img
                 alt={"itempicture2"}
-                src={item.img2}
+                src={img2}
                 className="w-[300px] h-[250px] border border-black p-6 hover:p-2 hover:duration-500"
               />
             </div>

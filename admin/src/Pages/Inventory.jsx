@@ -12,6 +12,7 @@ function Inventory() {
       <InventoryTab selected={selected} setSelected={setSelected} />
       <div className="w-[80%] h-screen flex justify-center my-[5%]">
         <div className="flex flex-col space-y-3 w-[40%]">
+          <p className="w-full text-center text-2xl">{selected}</p>
           {selected == "men" ? <Men /> : <></>}
           {selected == "women" ? <Women /> : <></>}
           {selected == "kids" ? <Kids /> : <></>}

@@ -146,6 +146,17 @@ app.post("/createmiscellaneous", (req, res) => {
     res.send("Data saved successfully to msc section successfully");
 });
 
+
+//fetch item from men table
+app.get('/getmen', (req, res) => {
+  const query = connection.query("SELECT * FROM men", (err, result) => {
+    if(err) throw err;
+    res.json(result)
+    console.log('MEN data:', result)
+  })
+  // res.send("Data retrieved")
+})
+
 //listens on port
 app.listen(8080, function () {
   console.log("app listening on port 8080!");
