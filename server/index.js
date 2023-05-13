@@ -1,21 +1,19 @@
-var express = require("express");
-var bodyParser = require("body-parser");
-var mysql = require("mysql");
-var cors = require("cors");
+const express = require("express");
+const bodyParser = require("body-parser");
+const mysql = require("mysql");
+const cors = require("cors");
+const fileupload = require("express-fileupload")
 
-var app = express();
 
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
+const app = express();
 
+app.use(bodyParser.urlencoded({extended: true,}));
 app.use(cors());
 app.use(bodyParser.json());
+app.use(fileupload())
 
 // Connect to the database
-var connection = mysql.createConnection({
+const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
@@ -86,17 +84,25 @@ app.get("/createaccount", (req, res, next) => {
 
 //adds item to men
 app.post("/createmen", (req, res) => {
-  const description = req.body.description;
-  const category = req.body.category;
 
-  const item = { description: description, category: category };
-  console.log(item)
+  const formData = req.files
+  const description = req.body
+  // const category = req.body.category;
+  // const image = req.body
 
-  const query = connection.query("INSERT INTO men SET ?", item,
-    (err, result) => {
-      if (err) throw err;
-    })
-    res.send("Data saved successfully to men section successfully");
+  // const upload = __dirname + '/uploads/images'
+  console.log("Image", formData)
+  console.log("Form: ", description)
+
+
+  // const item = { description: description, category: category };
+  // console.log(item)
+
+  // const query = connection.query("INSERT INTO men SET ?", item,
+  //   (err, result) => {
+  //     if (err) throw err;
+  //   })
+  //   res.send("Data saved successfully to men section successfully");
 });
 
 
