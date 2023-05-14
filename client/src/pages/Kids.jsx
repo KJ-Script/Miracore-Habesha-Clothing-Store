@@ -1,24 +1,45 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ShoppingNavBar from "../components/ShoppingNavBar";
-import MenShoes from "../components/MenShoes";
-import MenTop from "../components/MenTop";
-import MenPants from "../components/MenPants";
-import MenHats from "../components/MenHats";
-import MenAdditional from "../components/MenAdditional";
+import KidsShoes from "../components/KidsShoes";
+import KidsBottom from "../components/KidsBottom";
+import KidsTop from "../components/KidsTop";
+import KidsHats from "../components/KidsHats";
+import KidsAdditional from "../components/KidsAdditional";
+import axios from 'axios'
 
-function Kids() {
+function Women() {
   const [header, setHeader] = useState("top");
-  const firstTitle = 'TOPS, DRESSES & COATS'
+  const [data, setData] = useState([])
+  const firstTitle = 'TOPS & DRESSES'
   const secondTitle = 'PANTS & BOTTOMS'
   const thirdTitle = 'FOOTWEAR'
   const fourthTitle = 'HATS'
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:8080/getkids")
+      .then((response) => {
+        setData(response.data)
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const footwear = data.filter((item) => item.category == 'footwear')
+  const hats = data.filter((item) => item.category == 'hats')
+  const top = data.filter((item) => item.category == 'top')
+  const bottom = data.filter((item) => item.category == 'bottom')
+  const additional = data.filter((item) => item.category == 'additional')
+
+
   return (
     <div className="w-full">
       <ShoppingNavBar header={header} setHeader={setHeader} firstTitle={firstTitle} secondTitle={secondTitle} thirdTitle={thirdTitle} fourthTitle={fourthTitle}/>
       <div className="">
         {header == "shoes" ? (
           <div className="w-full flex justify-center">
-            <MenShoes />
+            <KidsShoes footwear={footwear} />
           </div>
         ) : (
           <div></div>
@@ -26,7 +47,7 @@ function Kids() {
 
         {header == "top" ? (
           <div className="w-full flex justify-center">
-            <MenTop />
+            <KidsTop top={top}/>
           </div>
         ) : (
           <div></div>
@@ -34,7 +55,7 @@ function Kids() {
 
         {header == "pants" ? (
           <div className="w-full flex justify-center">
-            <MenPants />
+            <KidsBottom bottom={bottom}/>
           </div>
         ) : (
           <div></div>
@@ -42,7 +63,7 @@ function Kids() {
 
         {header == "hats" ? (
           <div className="w-full flex justify-center">
-            <MenHats />
+            <KidsHats hats={hats} />
           </div>
         ) : (
           <div></div>
@@ -50,7 +71,7 @@ function Kids() {
 
         {header == "additionals" ? (
           <div className="w-full flex justify-center">
-            <MenAdditional />
+            <KidsAdditional additional={additional} />
           </div>
         ) : (
           <div></div>
@@ -60,4 +81,4 @@ function Kids() {
   );
 }
 
-export default Kids;
+export default Women;

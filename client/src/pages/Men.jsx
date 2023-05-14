@@ -25,13 +25,16 @@ function Men() {
         console.log(err);
       });
   }, []);
-
+  
+  
+  
   const footwear = data.filter((item) => item.category == 'footwear')
   const hats = data.filter((item) => item.category == 'hats')
   const top = data.filter((item) => item.category == 'top')
   const bottom = data.filter((item) => item.category == 'bottom')
   const additional = data.filter((item) => item.category == 'additional')
   
+  console.log("Ichigo",footwear);
   return (
     <div className="w-full">
       <ShoppingNavBar header={header} setHeader={setHeader} firstTitle={firstTitle} secondTitle={secondTitle} thirdTitle={thirdTitle} fourthTitle={fourthTitle}/>

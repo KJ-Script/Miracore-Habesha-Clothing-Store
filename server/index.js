@@ -11,6 +11,7 @@ app.use(bodyParser.urlencoded({extended: true,}));
 app.use(cors());
 app.use(bodyParser.json());
 app.use(fileupload())
+app.use('/uploads', express.static(__dirname + "/uploads"))
 
 // Connect to the database
 const connection = mysql.createConnection({
@@ -28,7 +29,6 @@ connection.connect();
 app.get("/get_data", (req, res, next) => {
   connection.query("SELECT * FROM user", function (err, result, fields) {
     if (err) throw err;
-    console.log("table Data: ", result);
     res.json(result);
   });
   console.log("Data retrieved successfully");
@@ -86,39 +86,81 @@ app.get("/createaccount", (req, res, next) => {
 app.post("/createmen", (req, res) => {
 
   const formData = req.files
-  const description = req.body
-  // const category = req.body.category;
-  // const image = req.body
 
-  // const upload = __dirname + '/uploads/images'
-  console.log("Image", formData)
-  console.log("Form: ", description)
+  const item = {
+    description: req.body.description,
+    category: req.body.category,
+    img: req.files.img.name,
+    img1: req.files.img1.name,
+    img2: req.files.img2.name,    
+  }
+  
+  const upload = __dirname + '/uploads/' + formData.img.name
+  const upload1= __dirname + '/uploads/' + formData.img1.name
+  const upload2 = __dirname + '/uploads/' + formData.img2.name
+  
+  formData.img.mv(upload, (err) => {return res.status(500).send(err)})
+  formData.img1.mv(upload1, (err) => {return res.status(500).send(err)})
+  formData.img2.mv(upload2, (err) => {return res.status(500).send(err)})
 
-
-  // const item = { description: description, category: category };
-  // console.log(item)
-
-  // const query = connection.query("INSERT INTO men SET ?", item,
-  //   (err, result) => {
-  //     if (err) throw err;
-  //   })
-  //   res.send("Data saved successfully to men section successfully");
+  const query = connection.query("INSERT INTO men SET ?", item,
+    (err, result) => {
+      if (err) throw err;
+    })
 });
 
 
 //adds item to women
 app.post("/createwomen", (req, res) => {
-  const description = req.body.description;
-  const category = req.body.category;
+  const formData = req.files
 
-  const item = { description: description, category: category };
-  console.log(item)
+  const item = {
+    description: req.body.description,
+    category: req.body.category,
+    img: req.files.img.name,
+    img1: req.files.img1.name,
+    img2: req.files.img2.name,    
+  }
+  
+  const upload = __dirname + '/uploads/' + formData.img.name
+  const upload1= __dirname + '/uploads/' + formData.img1.name
+  const upload2 = __dirname + '/uploads/' + formData.img2.name
+  
+  formData.img.mv(upload, (err) => {return res.status(500).send(err)})
+  formData.img1.mv(upload1, (err) => {return res.status(500).send(err)})
+  formData.img2.mv(upload2, (err) => {return res.status(500).send(err)})
 
   const query = connection.query("INSERT INTO women SET ?", item,
     (err, result) => {
       if (err) throw err;
     })
-    res.send("Data saved successfully to women section successfully");
+
+});
+
+app.post("/createkids", (req, res) => {
+  const formData = req.files
+
+  const item = {
+    description: req.body.description,
+    category: req.body.category,
+    img: req.files.img.name,
+    img1: req.files.img1.name,
+    img2: req.files.img2.name,    
+  }
+  
+  const upload = __dirname + '/uploads/' + formData.img.name
+  const upload1= __dirname + '/uploads/' + formData.img1.name
+  const upload2 = __dirname + '/uploads/' + formData.img2.name
+  
+  formData.img.mv(upload, (err) => {return res.status(500).send(err)})
+  formData.img1.mv(upload1, (err) => {return res.status(500).send(err)})
+  formData.img2.mv(upload2, (err) => {return res.status(500).send(err)})
+
+  const query = connection.query("INSERT INTO kids SET ?", item,
+    (err, result) => {
+      if (err) throw err;
+    })
+
 });
 
 
@@ -162,6 +204,26 @@ app.get('/getmen', (req, res) => {
   })
   // res.send("Data retrieved")
 })
+
+app.get('/getwomen', (req, res) => {
+  const query = connection.query("SELECT * FROM women", (err, result) => {
+    if(err) throw err;
+    res.json(result)
+    console.log('WOMEN data:', result)
+  })
+  // res.send("Data retrieved")
+})
+
+
+app.get('/getkids', (req, res) => {
+  const query = connection.query("SELECT * FROM kids", (err, result) => {
+    if(err) throw err;
+    res.json(result)
+    console.log('KIDS data:', result)
+  })
+  // res.send("Data retrieved")
+})
+
 
 //listens on port
 app.listen(8080, function () {

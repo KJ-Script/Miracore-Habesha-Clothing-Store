@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 function ShoppingDetails() {
+
   const location = useLocation();
   const navigate = useNavigate();
   const [selected, setSelected] = useState("md");
   const item = location.state?.item;
-  const img = location.state?.img;
-  const img1 = location.state?.img1;
-  const img2 = location.state?.img2;
 
   return (
     <div>
@@ -19,19 +17,19 @@ function ShoppingDetails() {
             <div className="hover:p-12 hover:duration-500 mx-2">
               <img
                 alt={"itempicture2"}
-                src={img}
+                src={`http://localhost:8080/uploads/${item.img}`}
                 className="w-[600px] h-[500px] border border-black p-6"
               />
             </div>
             <div className="">
               <img
                 alt={"itempicture2"}
-                src={img1}
+                src={`http://localhost:8080/uploads/${item.img1}`}
                 className="w-[300px] h-[250px] border border-black p-6 my-2 hover:p-2 hover:duration-500"
               />
               <img
                 alt={"itempicture2"}
-                src={img2}
+                src={`http://localhost:8080/uploads/${item.img2}`}
                 className="w-[300px] h-[250px] border border-black p-6 hover:p-2 hover:duration-500"
               />
             </div>
@@ -134,25 +132,7 @@ function ShoppingDetails() {
       </div>
 
       <div className="md:flex justify-between my-3 mx-4 text-center hidden">
-        <div className="w-[300px] h-[100px] border border-black flex items-center">
-          <p className="w-full text-center">Review text goes here</p>
-        </div>
-        <div className="w-[300px] h-[100px] border border-black flex items-center">
-          <p className="w-full text-center">Review text goes here</p>
-        </div>
-        <div className="w-[300px] h-[100px] border border-black  flex items-center">
-          <p className="w-full text-center">Review text goes here</p>
-        </div>
-
-        <div className="w-[300px] h-[100px] border border-black flex items-center">
-          <p className="w-full text-center">Review text goes here</p>
-        </div>
-        <div className="w-[300px] h-[100px] border border-black  flex items-center">
-          <p className="w-full text-center">Review text goes here</p>
-        </div>
-        <div className="w-[300px] h-[100px] border border-black  flex items-center">
-          <p className="w-full text-center">Review text goes here</p>
-        </div>
+    
       </div>
     </div>
   );
