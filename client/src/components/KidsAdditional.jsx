@@ -8,7 +8,7 @@ function KidsAdditional({additional}) {
       additional.map((item, index) => {
         return (
           <div className='px-2 py-2'>
-            <ShoppingBoxo key={index} item={item}/>
+            <ShoppingBox key={index} item={item}/>
           </div>
         )
       })
