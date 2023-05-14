@@ -3,7 +3,7 @@ import image from '../assets/images/LandingPage/Image.png'
 
 function Collection() {
   return (
-    <div className='h-screen w-full flex justify-center bg-transparent'>
+    <div className='min-h-screen w-full md:flex justify-center bg-transparent'>
         <div className='w-[50%] flex flex-col justify-center h-full space-y-4'>
             <p className="text-[300%]">Gentle Formal Looks</p>
             <p className="text-[120%]">For any occasion or event shop at our formal collection</p>

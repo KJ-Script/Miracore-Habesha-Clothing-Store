@@ -12,7 +12,7 @@ function Footer() {
   return (
     <footer style={footerStyle}>
       <div className="h-screen ">
-        <div className=" h-[50%] flex items-center justify-center font-semibold text-[50px] text-black">
+        <div className=" h-[50%] md:flex items-center justify-center font-semibold text-[50px] text-black">
           <h3>Visit our outlets in</h3>
           <h1>Addis</h1>
           <p>See Addresses</p>

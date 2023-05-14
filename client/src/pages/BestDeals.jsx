@@ -8,12 +8,12 @@ import ImageContainer from "../components/ImageContainer";
 function BestDeals() {
   const description = 'One of a kind beautiful dress'
   return (
-    <div className="h-screen w-full my-[2%]">
+    <div className="min-h-screen w-full my-[2%]">
       <div className="w-full flex justify-center">
         <p className="text-[150%] font-bold">Best Deals</p>
       </div>
 
-      <div className="flex space-x-4">
+      <div className="md:flex space-x-4 md:mx-0 mx-4">
         <ImageContainer image={bestdealImage1} description={description} original={'550$'} newPrice={'450$'}/>
         <ImageContainer image={bestdealImage2} description={description} original={'550$'} newPrice={'450$'}/>
         <ImageContainer image={bestdealImage3} description={description} original={'550$'} newPrice={'450$'}/>

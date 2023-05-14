@@ -1,5 +1,8 @@
 import React from "react";
-import tilet from '../assets/images/LandingPage/tilet.png'
+import tilet from '../assets/images/LandingPage/tilet.png';
+import logo from "../assets/miracle-logo.png";
+
+
 
 function ImmediateLandingPage() {
   return (
@@ -12,6 +15,7 @@ function ImmediateLandingPage() {
         </p>
         <p className="md:text-[270%] text-[120%]font-bold">Outstanding style, only for you</p>
         <p className="md:text-[370%] text-[170%] font-bold my-[15%] p-4 py-12 md:bg-slate-800 md:text-white">MIRACLE-FASHION</p>
+        <img src={logo} className="md:hidden flex"/>
         
         </div>
         <img src={tilet} className="mx-[5%] h-[85%] hidden md:flex"/>

@@ -12,7 +12,7 @@ function NavBar() {
           <div className="flex mx-20 space-x-7">
             <button onClick={() => {navigate('/dashboard')}}>Dashboard</button>
             <button onClick={() => {navigate('/inventory')}}>Inventory</button>
-            <button onClick={() => {navigate('/orders')}}>Purchases/Orders</button>
+            <button onClick={() => {navigate('/orders')}}>Items</button>
           </div>
 
           <div className="flex mx-20 space-x-7">

@@ -9,9 +9,13 @@ function LandingPage() {
   return (
     <div className="">
       <ImmediateLandingPage/>
+      <div className="hidden md:flex">
       <Home />
+      </div>
       <BestDeals />
+      <div className="hidden md:flex">
       <Collection />
+      </div>
       <Footer />
     </div>
   );
