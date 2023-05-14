@@ -11,7 +11,7 @@ import ShoppingDetails from "./pages/ShoppingDetails";
 function App() {
 
   return (
-    <div className="font-outfit bg-slate-200">
+    <div className="min-h-screen font-outfit bg-slate-200">
       <Router>
         <NavBar />
         <Routes>
