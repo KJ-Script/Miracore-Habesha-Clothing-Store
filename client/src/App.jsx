@@ -10,6 +10,7 @@ import ShoppingDetails from "./pages/ShoppingDetails";
 import AdminSignIn from "./pages/AdminSignIn";
 import AdminDashboard from "./pages/AdminDashboard";
 import AdminProfile from "./pages/AdminProfile";
+import Cart from "./pages/Cart";
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/admin/signin" element={<AdminSignIn />} />
           <Route exact path="/admin/dashboard" element={<AdminDashboard />} />
           <Route exact path="/admin/profile" element={<AdminProfile />} />
+          <Route exact path="/cart" element={<Cart />} />
         </Routes>
       </Router>
     </div>
