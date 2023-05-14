@@ -5,6 +5,7 @@ import Netela from "../components/Netela";
 import Crowns from "../components/Crowns";
 import Artifacts from "../components/Artifacts";
 import Additionals from "../components/Additionals";
+import tilet from "../assets/images/LandingPage/tilet.png";
 import axios from 'axios'
 
 function Miscellaneous() {
@@ -34,9 +35,11 @@ function Miscellaneous() {
 
 
   return (
+    <div className="flex justify-between">
+    <img src={tilet} className=" hidden md:flex" />
     <div className="w-full">
       <ShoppingNavBar header={header} setHeader={setHeader} firstTitle={firstTitle} secondTitle={secondTitle} thirdTitle={thirdTitle} fourthTitle={fourthTitle}/>
-      <div className="">
+      <div className="max-h-screen overflow-scroll">
         {header == "shoes" ? (
           <div className="w-full flex justify-center">
             <Gabi gabi={gabi}/>
@@ -78,6 +81,8 @@ function Miscellaneous() {
           <div></div>
         )}
       </div>
+    </div>
+      <img src={tilet} className=" hidden md:flex" />
     </div>
   ) 
 }

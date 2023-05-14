@@ -1,30 +1,62 @@
 import React from "react";
-import logo from "../assets/miracle-logo.png"
+import logo from "../assets/miracle-logo.png";
 import { useNavigate } from "react-router-dom";
 
 function NavBar() {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
     <div className="flex justify-center py-6">
       <div className="w-full md:w-[90%] flex justify-between">
         <div className="flex justify-between">
-        <img alt="Logo" src={logo} className="w-[70px]"/>
-          <button className="hidden md:mx-2 px-2 bg-black text-white text-xl">
+          <img
+            alt="Logo"
+            src={logo}
+            className="w-[70px]"
+            onClick={() => {
+              navigate("/");
+            }}
+          />
+          <button
+            className="hidden md:flex md:mx-2 px-2 bg-black text-white text-xl text-center items-center"
+            onClick={() => {
+              navigate("/");
+            }}
+          >
             Miracle Design
           </button>
-          <button className="mx-2" onClick={() => {
-            navigate('/shoppingmen')
-          }}>Men</button>
-          <button className="mx-2" onClick={() => {
-            navigate('/shoppingwomen')
-          }}>Women</button>
-          <button className="mx-2" onClick={() => {
-            navigate('/shoppingkids')
-          }}>Kids</button>
-          <button className="mx-2" onClick={() => {
-            navigate('/shoppingmiscellaneous')
-          }}>Miscellaneous</button>
+          <button
+            className="mx-2"
+            onClick={() => {
+              navigate("/shoppingmen");
+            }}
+          >
+            Men
+          </button>
+          <button
+            className="mx-2"
+            onClick={() => {
+              navigate("/shoppingwomen");
+            }}
+          >
+            Women
+          </button>
+          <button
+            className="mx-2"
+            onClick={() => {
+              navigate("/shoppingkids");
+            }}
+          >
+            Kids
+          </button>
+          <button
+            className="mx-2"
+            onClick={() => {
+              navigate("/shoppingmiscellaneous");
+            }}
+          >
+            Miscellaneous
+          </button>
         </div>
 
         <div className="hidden md:flex md:justify-between">

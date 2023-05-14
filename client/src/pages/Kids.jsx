@@ -5,6 +5,7 @@ import KidsBottom from "../components/KidsBottom";
 import KidsTop from "../components/KidsTop";
 import KidsHats from "../components/KidsHats";
 import KidsAdditional from "../components/KidsAdditional";
+import tilet from "../assets/images/LandingPage/tilet.png";
 import axios from 'axios'
 
 function Women() {
@@ -34,9 +35,11 @@ function Women() {
 
 
   return (
+    <div className="flex justify-between">
+    <img src={tilet} className=" hidden md:flex" />
     <div className="w-full">
       <ShoppingNavBar header={header} setHeader={setHeader} firstTitle={firstTitle} secondTitle={secondTitle} thirdTitle={thirdTitle} fourthTitle={fourthTitle}/>
-      <div className="">
+      <div className="max-h-screen overflow-scroll">
         {header == "shoes" ? (
           <div className="w-full flex justify-center">
             <KidsShoes footwear={footwear} />
@@ -77,6 +80,8 @@ function Women() {
           <div></div>
         )}
       </div>
+    </div>
+      <img src={tilet} className=" hidden md:flex" />
     </div>
   );
 }

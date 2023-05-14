@@ -8,10 +8,10 @@ function Home() {
     <div className="min-h-screen w-full items-center justify-center">
       <div className="w-full h-full">
         <div className="w-full h-screen">
-          <div className="w-full flex justify-between">
-            <img src={sides} />
+          <div className="w-full md:flex justify-between">
+            <img src={sides} className="hidden md:flex"/>
             <div>
-              <div className="w-full bg-red-600 flex">
+              <div className="w-full bg-red-600 md:flex">
                 <div
                   style={{
                     backgroundImage: `url(${forher})`,
@@ -20,7 +20,7 @@ function Home() {
                     width: 850,
                     height: 1000,
                   }}
-                  className="flex items-center justify-center"
+                  className="md:flex items-center justify-center hidden"
                 >
                   <button className=" mx-3 py-3 px-8 border-white border-[2px] bg-slate-800 text-gray-200 text-xl hover:bg-gray-200 hover:text-slate-800">
                     For Her
@@ -34,7 +34,7 @@ function Home() {
                     width: 850,
                     height: 1000,
                   }}
-                  className="flex items-center justify-center"
+                  className="hidden md:flex items-center justify-center"
                 >
                   <button className=" mx-3 py-3 px-8 border-white border-[2px] bg-slate-800 text-white text-xl hover:bg-white hover:text-slate-800">
                     For Him
@@ -42,7 +42,7 @@ function Home() {
                 </div>
               </div>
             </div>
-            <img src={sides} className=""/>
+            <img src={sides} className="hidden md:flex"/>
           </div>
         </div>
       </div>
