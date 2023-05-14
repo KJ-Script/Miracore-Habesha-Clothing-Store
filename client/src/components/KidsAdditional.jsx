@@ -1,4 +1,5 @@
 import React from 'react'
+import ShoppingBox from '../utils/ShoppingBox'
 
 function KidsAdditional({additional}) {
   return (
@@ -7,7 +8,7 @@ function KidsAdditional({additional}) {
       additional.map((item, index) => {
         return (
           <div className='px-2 py-2'>
-            <ShoppingBox key={index} item={item}/>
+            <ShoppingBoxo key={index} item={item}/>
           </div>
         )
       })

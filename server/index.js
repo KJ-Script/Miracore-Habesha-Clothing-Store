@@ -63,8 +63,8 @@ app.post("/login", (req, response, next) => {
 
 // creating an account
 app.get("/createaccount", (req, res, next) => {
-  const user = "ketiyohannes";
-  const pass = "12345";
+  const user = "keti";
+  const pass = "1994";
 
   let post = {
     username: user,
@@ -84,9 +84,10 @@ app.get("/createaccount", (req, res, next) => {
 
 //adds item to men
 app.post("/createmen", (req, res) => {
+  console.log("in men")
 
   const formData = req.files
-
+  
   const item = {
     description: req.body.description,
     category: req.body.category,
@@ -102,7 +103,8 @@ app.post("/createmen", (req, res) => {
   formData.img.mv(upload, (err) => {return res.status(500).send(err)})
   formData.img1.mv(upload1, (err) => {return res.status(500).send(err)})
   formData.img2.mv(upload2, (err) => {return res.status(500).send(err)})
-
+  
+  console.log("here")
   const query = connection.query("INSERT INTO men SET ?", item,
     (err, result) => {
       if (err) throw err;
@@ -152,48 +154,47 @@ app.post("/createkids", (req, res) => {
   const upload1= __dirname + '/uploads/' + formData.img1.name
   const upload2 = __dirname + '/uploads/' + formData.img2.name
   
+  formData.img.mv(upload, (err) => {console.log(err)})
+  formData.img1.mv(upload1, (err) => {console.log(err)})
+  formData.img2.mv(upload2, (err) => {console.log(err)})
+
+  const query = connection.query("INSERT INTO kids SET ?", item,
+    (err, result) => {
+      if (err) throw err;
+      res.status.send('Appended')
+    })
+
+});
+
+
+//adds item to others
+app.post("/createmsc", (req, res) => {
+  const formData = req.files
+
+  const item = {
+    description: req.body.description,
+    category: req.body.category,
+    img: req.files.img.name,
+    img1: req.files.img1.name,
+    img2: req.files.img2.name,    
+  }
+
+  const upload = __dirname + '/uploads/' + formData.img.name
+  const upload1= __dirname + '/uploads/' + formData.img1.name
+  const upload2 = __dirname + '/uploads/' + formData.img2.name
+  
   formData.img.mv(upload, (err) => {return res.status(500).send(err)})
   formData.img1.mv(upload1, (err) => {return res.status(500).send(err)})
   formData.img2.mv(upload2, (err) => {return res.status(500).send(err)})
-
-  const query = connection.query("INSERT INTO kids SET ?", item,
-    (err, result) => {
-      if (err) throw err;
-    })
-
-});
-
-
-//adds item to kids
-app.post("/createkids", (req, res) => {
-  const description = req.body.description;
-  const category = req.body.category;
-
-  const item = { description: description, category: category };
-  console.log(item)
-
-  const query = connection.query("INSERT INTO kids SET ?", item,
-    (err, result) => {
-      if (err) throw err;
-    })
-    res.send("Data saved successfully to kids section successfully");
-});
-
-//adds item to others
-app.post("/createmiscellaneous", (req, res) => {
-  const description = req.body.description;
-  const category = req.body.category;
-
-  const item = { description: description, category: category };
-  console.log(item)
 
   const query = connection.query("INSERT INTO miscellaneous SET ?", item,
     (err, result) => {
       if (err) throw err;
     })
-    res.send("Data saved successfully to msc section successfully");
 });
 
+
+//GET REQUEST STARTS HERE
 
 //fetch item from men table
 app.get('/getmen', (req, res) => {
@@ -224,6 +225,14 @@ app.get('/getkids', (req, res) => {
   // res.send("Data retrieved")
 })
 
+app.get('/getmiscellaneous', (req, res) => {
+  const query = connection.query("SELECT * FROM miscellaneous", (err, result) => {
+    if(err) throw err;
+    res.json(result)
+    console.log('KIDS data:', result)
+  })
+  // res.send("Data retrieved")
+})
 
 //listens on port
 app.listen(8080, function () {

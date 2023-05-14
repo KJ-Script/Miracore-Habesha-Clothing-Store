@@ -1,4 +1,5 @@
 import React from 'react'
+import ShoppingBox from '../utils/ShoppingBox'
 
 function KidsHats({hats}) {
   return (
