@@ -14,7 +14,7 @@ import AdminProfile from "./pages/AdminProfile";
 function App() {
 
   return (
-    <div className="font-outfit">
+    <div className="font-outfit bg-slate-200">
       <Router>
         <NavBar />
         <Routes>

@@ -1,15 +1,18 @@
 import React from "react";
-import footerimage from "../assets/images/LandingPage/Footer-Background.png";
+import footerimage from "../assets/images/LandingPage/addis.png";
+// import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 function Footer() {
   const footerStyle = {
     backgroundImage: `url(${footerimage})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
   };
 
   return (
     <footer style={footerStyle}>
       <div className="h-screen ">
-        <div className=" h-[50%] flex items-center justify-center font-semibold text-[50px] text-white">
+        <div className=" h-[50%] flex items-center justify-center font-semibold text-[50px] text-black">
           <h3>Visit our outlets in</h3>
           <h1>Addis</h1>
           <p>See Addresses</p>
@@ -67,7 +70,7 @@ function Footer() {
           <div className="col-md-3 col-sm-6">
             <h5>Signup for the latest new</h5>
           </div>
-          <div>
+          {/* <div>
             <FontAwesomeIcon
               icon="fa-brands fa-facebook-f"
               style={{ color: "#424242" }}
@@ -92,7 +95,7 @@ function Footer() {
               icon="fa-regular fa-phone"
               style={{ color: "#525252" }}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
